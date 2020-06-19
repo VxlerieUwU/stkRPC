@@ -21,3 +21,5 @@ for line in tailer.follow(open(str(Path.home()) + '/.config/supertuxkart/config-
         RPC.update(large_image="stk", state="SuperTuxKart", details="Main menu", start=time.time())
     elif '[info   ] ProtocolManager: A 11ClientLobby protocol has been started.' in line:
         RPC.update(large_image="stk", small_image="online", state="SuperTuxKart", details="Waiting in an online lobby", start=time.time())
+    elif '[info   ] Singleton: Destroyed singleton.' in line:
+        break;
